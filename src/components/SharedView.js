@@ -7,7 +7,8 @@ class SharedView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleView: 0
+      visibleView: 0,
+      masterItemList: []
     };
   }
 
@@ -23,12 +24,18 @@ class SharedView extends React.Component {
     });
   }
 
+  handleAddingNewItemToList = (newItem) => {
+    const newMasterItemList = this.state.masterItemList.concat(newItem);
+    this.setState({masterItemList: newMasterItemList,
+                  visibleView: 1 });
+  }
+
   render(){
       let currentlyVisibleState = null;
       if (this.state.visibleView === 0) {
         currentlyVisibleState = null
       } else if (this.state.visibleView === 1) {
-        currentlyVisibleState = <ItemList />
+        currentlyVisibleState = <ItemList itemList ={this.state.masterItemList} />;
       } else if (this.state.visibleView === 2) {
         currentlyVisibleState = <NewItemForm />
       }
@@ -40,6 +47,7 @@ class SharedView extends React.Component {
         </>
     );
   }
+  
 }
 
 export default SharedView;

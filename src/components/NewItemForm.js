@@ -1,5 +1,5 @@
 import React from 'react';
-import { v4 } from 'uuid';
+// import { v4 } from 'uuid';
 
 function NewItemForm() {
 
@@ -23,7 +23,13 @@ function NewItemForm() {
     </>
   );
 
-function handleNew
+  function handleNewItemFormSubmission(event) {
+    event.preventDefault();
+    console.log(event.target.name.value);
+    console.log(event.target.description.value);
+    console.log(event.target.quantity.value);
+  }
+
 }
 
 
