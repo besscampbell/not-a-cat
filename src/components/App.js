@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "./Header.js";
-import SharedView from "./SharedView.js";
+import Header from "./Header";
+import SharedView from "./SharedView";
 
 function App(){
   return (
