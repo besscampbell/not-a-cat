@@ -10,7 +10,7 @@ class SharedView extends React.Component {
       visibleView: 0
     };
   }
-  
+
   listClick = () => {
     this.setState({
       visibleView: 1
