@@ -30,7 +30,7 @@ function Listing(props){
 Listing.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  quantity: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
   id: PropTypes.string,
   whenItemClicked: PropTypes.func
 };

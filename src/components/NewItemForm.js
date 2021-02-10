@@ -10,7 +10,8 @@ function NewItemForm(props) {
         <input
           type='text'
           name='name'
-          placeholder='Item Name' />
+          placeholder='Item Name'
+          required />
         <input
           type='text'
           name='description'
@@ -18,7 +19,9 @@ function NewItemForm(props) {
         <input
           type='number'
           name='quantity'
-          placeholder='0' />
+          placeholder="0"
+          min='0'
+          required />
         <button type='submit'>Create New Item</button>
       </form>
     </>
@@ -26,7 +29,7 @@ function NewItemForm(props) {
 
   function handleNewItemFormSubmission(event) {
     event.preventDefault();
-    props.onNewItemCreation({name: event.target.name.value, description: event.target.description.value, quantity: event.target.quantity.value, id: v4()});
+    props.onNewItemCreation({name: event.target.name.value, description: event.target.description.value, quantity: parseInt(event.target.quantity.value), id: v4()});
   }
 
 }
