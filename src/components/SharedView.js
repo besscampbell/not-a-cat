@@ -35,9 +35,9 @@ class SharedView extends React.Component {
       if (this.state.visibleView === 0) {
         currentlyVisibleState = null
       } else if (this.state.visibleView === 1) {
-        currentlyVisibleState = <ItemList itemList ={this.state.masterItemList} />;
+        currentlyVisibleState = <ItemList itemList={this.state.masterItemList} />;
       } else if (this.state.visibleView === 2) {
-        currentlyVisibleState = <NewItemForm />
+        currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingNewItemToList}/>
       }
       return (
         <>
