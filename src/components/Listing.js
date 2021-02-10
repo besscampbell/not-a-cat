@@ -17,7 +17,6 @@ function Listing(props){
         <h3>{props.name}</h3>
         <h4>{props.description}</h4>
         <h4>{props.quantity}</h4>
-        {/* <h4>Out of Stock</h4> */}
       </>
     )
   }
