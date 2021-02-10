@@ -1,10 +1,11 @@
 import React from "react";
 import Listing from "./Listing";
+import PropTypes from "prop-types";
 
 function ItemList(props) {
   return (
     <>
-      <hr />
+      <hr/>
       {props.itemList.map((listing, index) => 
         <Listing name={listing.name}
         description={listing.description}
@@ -13,6 +14,10 @@ function ItemList(props) {
       )}
     </>
   );
+}
+
+ItemList.propTypes = {
+  itemList: PropTypes.array
 }
 
 export default ItemList;
