@@ -6,17 +6,22 @@ function Listing(props){
   if (quantity <= 0) {
     return (
       <>
-        <h3>{props.name}</h3>
-        <h4>{props.description}</h4>
-        <h4>Out of stock</h4>
+        <div onClick = {() => props.whenItemClicked(props.id)}>
+          <h3>{props.name}</h3>
+          <h4>{props.description}</h4>
+          {/* <h4>{props.quantity}</h4> */}
+          <h4>Out of stock</h4>
+        </div>
       </>
     )
   } else {
     return (
       <>
-        <h3>{props.name}</h3>
-        <h4>{props.description}</h4>
-        <h4>{props.quantity}</h4>
+        <div onClick = {() => props.whenItemClicked(props.id)}>
+          <h3>{props.name}</h3>
+          <h4>{props.description}</h4>
+          <h4>{props.quantity}</h4>
+        </div>
       </>
     )
   }
@@ -25,7 +30,9 @@ function Listing(props){
 Listing.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired
+  quantity: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  whenItemClicked: PropTypes.func
 };
 
 export default Listing;

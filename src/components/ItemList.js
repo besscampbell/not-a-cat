@@ -6,18 +6,22 @@ function ItemList(props) {
   return (
     <>
       <hr/>
-      {props.itemList.map((listing, index) => 
-        <Listing name={listing.name}
-        description={listing.description}
-        quantity={listing.quantity} 
-        key={index}/>
+      {props.itemList.map((listing) => 
+        <Listing 
+          whenItemClicked = { props.onItemSelection }
+          name={listing.name}
+          description={listing.description}
+          quantity={listing.quantity} 
+          id={listing.id}
+          key={listing.id}/>
       )}
     </>
   );
 }
 
 ItemList.propTypes = {
-  itemList: PropTypes.array
+  itemList: PropTypes.array,
+  onItemSelection: PropTypes.func
 }
 
 export default ItemList;

@@ -15,16 +15,30 @@ class SharedView extends React.Component {
   }
 
   listClick = () => {
-    this.setState({
-      visibleView: 1
-    });
+    if(this.state.selectedItem != null){
+        this.setState({
+          selectedItem: null,
+          visibleView: 1
+        });
+    } else {
+      this.setState({
+        visibleView: 1
+      });
+    }
   }
 
   newItemClick = () => {
-    this.setState({
-      visibleView: 2
-    });
-  }
+    if(this.state.selectedItem != null){
+      this.setState({
+        selectedItem: null,
+        visibleView: 2
+      });
+    } else {
+      this.setState({
+        visibleView: 2
+      });
+    }
+}
 
   handleAddingNewItemToList = (newItem) => {
     const newMasterItemList = this.state.masterItemList.concat(newItem);
@@ -57,7 +71,7 @@ class SharedView extends React.Component {
         </>
     );
   }
-  
+
 }
 
 export default SharedView;
