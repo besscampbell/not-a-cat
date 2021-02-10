@@ -32,7 +32,7 @@ function NewItemForm(props) {
 }
 
 NewItemForm.propTypes = {
-  onNewTicketCreation: PropTypes.func
+  onNewItemCreation: PropTypes.func
 };
 
 
