@@ -22,6 +22,10 @@ function NewItemForm(props) {
           placeholder="0"
           min='0'
           required />
+        <input
+          type='text'
+          name='image'
+          placeholder='Image URL'/>
         <button type='submit'>Create New Item</button>
       </form>
     </>
@@ -29,7 +33,7 @@ function NewItemForm(props) {
 
   function handleNewItemFormSubmission(event) {
     event.preventDefault();
-    props.onNewItemCreation({name: event.target.name.value, description: event.target.description.value, quantity: parseInt(event.target.quantity.value), id: v4()});
+    props.onNewItemCreation({name: event.target.name.value, description: event.target.description.value, quantity: parseInt(event.target.quantity.value), image: event.target.image.value, id: v4()});
   }
 
 }

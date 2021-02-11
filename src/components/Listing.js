@@ -7,6 +7,7 @@ function Listing(props){
     return (
       <>
         <div onClick = {() => props.whenItemClicked(props.id)}>
+          <img src={props.image} alt="Item" width="150"></img>
           <h3>{props.name}</h3>
           <h4>{props.description}</h4>
           {/* <h4>{props.quantity}</h4> */}
@@ -18,6 +19,7 @@ function Listing(props){
     return (
       <>
         <div onClick = {() => props.whenItemClicked(props.id)}>
+          <img src={props.image} alt="Item" width="150"></img>
           <h3>{props.name}</h3>
           <h4>{props.description}</h4>
           <h4>{props.quantity}</h4>
@@ -31,6 +33,7 @@ Listing.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
+  image: PropTypes.string,
   id: PropTypes.string,
   whenItemClicked: PropTypes.func
 };

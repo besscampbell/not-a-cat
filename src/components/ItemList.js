@@ -11,7 +11,8 @@ function ItemList(props) {
           whenItemClicked = { props.onItemSelection }
           name={listing.name}
           description={listing.description}
-          quantity={listing.quantity} 
+          quantity={listing.quantity}
+          image={listing.image}
           id={listing.id}
           key={listing.id}/>
       )}
