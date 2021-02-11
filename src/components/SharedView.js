@@ -38,7 +38,7 @@ class SharedView extends React.Component {
         visibleView: 2
       });
     }
-}
+  }
 
   handleAddingNewItemToList = (newItem) => {
     const newMasterItemList = this.state.masterItemList.concat(newItem);
@@ -51,10 +51,26 @@ class SharedView extends React.Component {
     this.setState({selectedItem: selectedItem});
   }
 
+
+  handleRestock = () => {
+    const quantityOfItem = this.state.selectedItem.quantity;
+    const restockedItem = {...this.state.selectedItem, quantity:(quantityOfItem + 1)};
+    const newMasterList = this.state.masterItemList.filter(item => item.id !== this.state.selectedItem.id).concat(restockedItem);
+    this.setState({selectedItem: restockedItem, masterItemList: newMasterList});
+  };
+
+  handleBuy = () => {
+    const quantityOfItem = this.state.selectedItem.quantity;
+    const restockedItem = {...this.state.selectedItem, quantity:(quantityOfItem - 1)};
+    const newMasterList = this.state.masterItemList.filter(item => item.id !== this.state.selectedItem.id).concat(restockedItem);
+    this.setState({selectedItem: restockedItem, masterItemList: newMasterList});
+  };
+
+
   render(){
       let currentlyVisibleState = null;
       if (this.state.selectedItem != null) {
-        currentlyVisibleState = <ItemDetail item = {this.state.selectedItem} />
+        currentlyVisibleState = <ItemDetail item = {this.state.selectedItem} onRestock={this.handleRestock} onBuy={this.handleBuy}/>
       } else if (this.state.visibleView === 0) {
         currentlyVisibleState = null
       } else if (this.state.visibleView === 1) {

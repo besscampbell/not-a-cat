@@ -10,7 +10,6 @@ function Listing(props){
           <img src={props.image} alt="Item" width="150"></img>
           <h3>{props.name}</h3>
           <h4>{props.description}</h4>
-          {/* <h4>{props.quantity}</h4> */}
           <h4>Out of stock</h4>
         </div>
       </>
