@@ -22,4 +22,4 @@ Authored by: Bess Campbell, Ryland Adams, and Austin Schrader.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2021 *_Ryland Adams, Bess Cammpbell, and Austin Schrader_*
+Copyright (c) 2021 *_Ryland Adams, Bess Campbell, and Austin Schrader_*
